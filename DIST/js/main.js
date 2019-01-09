@@ -20,3 +20,19 @@ $(function() {
   });
   $('.open-menu').height($(window).height());
 });
+
+// Smooth Scrolling
+$('.cf a').on('click',function(event){
+	if(this.hash !==''){
+		event.preventDefault();
+		conts hash = this.hash;
+
+		$('html,body').animate{
+			scrolltop: $(hash).offset().top
+		},
+		800,
+		function(){
+			window.location.hash = hash;
+		}
+	}
+}
